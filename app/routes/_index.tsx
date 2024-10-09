@@ -20,20 +20,16 @@ export default function Index() {
             <p className="dark-text text-6xl font-bold">12</p>
           </div>
         </header>
-        <div className="flex flex-col items-center bg-game w-96 h-96">
-          <div className="flex flex-row grow w-full">
-            <div className="flex items-center mr-auto justify-center border-8 border-sky rounded-full p-4 w-40 h-40">
-              <img src="images/icon-paper.svg" alt="Select Paper" className="w-15"/>
-            </div>
-            <div className="flex items-center ml-auto justify-center border-8 border-sky rounded-full p-4 w-40 h-40">
-              <img src="images/icon-scissors.svg" alt="Select Scissors" className="w-15"/>
-            </div>
-          </div>
-          <div className="flex items-center justify-center border-8 border-sky rounded-full p-4 w-40 h-40">
-            <img src="images/icon-rock.svg" alt="Select Rock" className="w-15"/>
-          </div>
-          
-          {/*  */}
+        <div className="flex flex-row flex-wrap min-w-80 justify-center items-center bg-game w-96 h-96">
+           {choices.map(({ text, icon, placement, outerCircle }) => (
+              <div key={icon} className={`flex justify-center ${placement}`}>
+                <div className={`${outerCircle} flex rounded-full w-40 h-40 items-center justify-center`}>
+                  <div className="flex bg-white rounded-full shadow-md w-32 h-32 items-center justify-center">
+                    <img src={icon} alt={text} className="w-15"/>
+                  </div>
+                </div>
+              </div>
+           ))}
         </div>
         <div className=" rounded-lg border-2 ml-auto mx-6 text-base border-gray-200 px-8 dark:border-gray-700">
             <a
@@ -48,3 +44,24 @@ export default function Index() {
     </div>
   );
 }
+
+const choices = [
+  {
+    text: "Select Paper",
+    icon: "images/icon-paper.svg",
+    placement: "mr-auto",
+    outerCircle: "paper-outer-circle" ,
+  },
+    {
+    text: "Select Scissors",
+    icon: "images/icon-scissors.svg",
+    placement: "ml-auto",
+    outerCircle: "scissors-outer-circle" ,
+  },
+    {
+    text: "Select Rock",
+    icon: "images/icon-rock.svg",
+    placement: "basis-full",
+    outerCircle: "rock-outer-circle" ,
+  },
+]

@@ -24,6 +24,19 @@
   .header-outline {
     border-color: hsl(var(--header-outline))
   }
+  .rock-outer-circle {
+    background-color: hsl(var(--rock-gradient-2));
+    box-shadow: 0 0.5rem 0 hsl(var(--rock-gradient-1)); 
+  }
+  .paper-outer-circle {
+    background-color: hsl(var(--paper-gradient-2));
+    box-shadow: 0 0.5rem 0 hsl(var(--paper-gradient-1)); 
+  }
+  .scissors-outer-circle {
+    background-color: hsl(var(--scissors-gradient-2));
+    box-shadow: 0 0.5rem 0 hsl(var(--scissors-gradient-1)); 
+  }
+ 
 }
 
 html,

@@ -11,6 +11,12 @@
     --header-outline: 217deg 16% 45%;
     --background-gradient-1: 214deg 47% 23%;
     --background-gradient-2: 237deg 49% 15%;
+    --paper-gradient-1: 229deg 65% 46%;
+    --paper-gradient-2: 230deg 89% 65%;
+    --rock-gradient-1: 346deg 77% 35%;
+    --rock-gradient-2: 349deg 70% 56%;
+    --scissors-gradient-1: 28deg 74% 45%;
+    --scissors-gradient-2: 40deg 84% 53%;
   }
   
   body {
