@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer utilities {
-  .bg-gradient-1 {
+  .bg-gradient {
     background-image: radial-gradient(
       circle at top,
       hsl(var(--background-gradient-1)),
@@ -36,12 +36,14 @@
     background-color: hsl(var(--scissors-gradient-2));
     box-shadow: 0 0.5rem 0 hsl(var(--scissors-gradient-1)); 
   }
- 
+  .shadow-inner-strong {
+    box-shadow: inset 0 10px 0px 0 hsl(var(--choice-inner-shadow));
+  }
 }
 
 html,
 body {
-  @apply bg-gradient-1 dark:bg-gray-950; 
+  @apply bg-gradient; 
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
