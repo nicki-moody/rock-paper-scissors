@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .bg-gradient-1 {
+    background-image: radial-gradient(
+      circle at top,
+      hsl(var(--background-gradient-1)),
+      hsl(var(--background-gradient-2))
+    );
+  }
+  .bg-game {
+    background-image: url("images/bg-triangle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .score-text { 
+    color: hsl(var(--score-text)) 
+  } 
+  .dark-text { 
+    color: hsl(var(--dark-text)) 
+  } 
+  .header-outline {
+    border-color: hsl(var(--header-outline))
+  }
+}
+
+html,
+body {
+  @apply bg-gradient-1 dark:bg-gray-950; 
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}

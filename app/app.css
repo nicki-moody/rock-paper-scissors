@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --dark-text: 229deg 25% 31%;
+    --score-text: 229deg 64% 46%;
+    --header-outline: 217deg 16% 45%;
+    --background-gradient-1: 214deg 47% 23%;
+    --background-gradient-2: 237deg 49% 15%;
+  }
+  
+  body {
+    font-family: 'Barlow', sans-serif;
+  }
+}
