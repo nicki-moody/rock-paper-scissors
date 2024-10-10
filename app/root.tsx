@@ -11,6 +11,7 @@ import { useState } from "react";
 import "./tailwind.css";
 import "./app.css";
 import { Decision } from "./utils/game";
+import { ScoreOutletContext } from "./utils/game";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -48,12 +49,9 @@ export default function App() {
   const [score, setScore] = useState<number>(0);
 
   const updateScore = (decision : Decision) => {
-    if (decision === Decision.Won) {
-      setScore((prevScore) => prevScore + 1);
-    } else if (decision === Decision.Lost) {
-      setScore((prevScore) => prevScore - 1);
-    }
+    //Don't allow minus scores
+    setScore((prevScore) => Math.max(prevScore + decision, 0 )); 
   };
 
-  return <Outlet context={{ score, updateScore }} />;
+  return <Outlet context={{ score: score, updateScore: updateScore } satisfies ScoreOutletContext} />;
 }

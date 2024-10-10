@@ -4,6 +4,7 @@ import { useOutletContext, Link } from "@remix-run/react";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 import {choices} from "~/utils/choices";
+import { ScoreOutletContext } from "~/utils/game";
 
 
 export const meta: MetaFunction = () => {
@@ -14,7 +15,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  const { score } = useOutletContext<number>();
+  const { score } = useOutletContext<ScoreOutletContext>();
 
   return (
     <div className="flex h-screen items-start justify-center bg-gradient-start uppercase">

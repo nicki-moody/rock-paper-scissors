@@ -16,3 +16,8 @@ export enum Decision {
     Draw = 0,
     NotSet = -99,
 }
+
+export interface ScoreOutletContext {
+  score: number;
+  updateScore(decision: Decision): void;
+}

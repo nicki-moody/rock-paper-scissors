@@ -1,4 +1,4 @@
-export default function Header({score}) {
+export default function Header({score} : {score : number}) {
     return (
         <header className="flex flex-row items-start justify-center mt-6 gap-4 w-2/4 rounded-lg border-2 header-outline p-4 dark:border-gray-700">
             <div className="flex text-gray-100 text-3xl font-bold leading-7">

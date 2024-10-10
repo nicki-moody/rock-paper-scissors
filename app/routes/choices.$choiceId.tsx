@@ -8,10 +8,10 @@ import ChoiceCard from "~/components/ChoiceCard";
 import OutcomeBanner from "~/components/OutcomeBanner";
 
 import { choices } from "~/utils/choices";
-import { Decision, determineWinner } from "~/utils/game";
+import { Decision, determineWinner, ScoreOutletContext } from "~/utils/game";
 
 export default function Choice() {
-    const { score, updateScore } = useOutletContext();
+    const { score, updateScore } = useOutletContext<ScoreOutletContext>();
     const {choiceId} = useParams();
     const [computerChoice, setComputerChoice] = useState(""); 
     const [loading, setLoading] = useState(true); 
