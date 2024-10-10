@@ -1,11 +1,20 @@
-export const determineWinner = (playerChoice : string, computerChoice : string) => {
+
+// export const determineWinner = (playerChoice : string, computerChoice : string) : Decision => {
+export function determineWinner(playerChoice : string, computerChoice : string) : Decision { 
     if(playerChoice === computerChoice)
-        return 0;
+        return Decision.Draw;
     else if(playerChoice === "rock" && computerChoice === "paper" ||
         playerChoice === "paper" && computerChoice === "scissors" ||
         playerChoice === "scissors" && computerChoice === "rock"
     )
-        return -1;
+        return Decision.Lost;
     else 
-        return 1;
+        return Decision.Won;
+}
+
+export enum Decision {
+    Won = 1,
+    Lost = -1,
+    Draw = 0,
+    NotSet = -99,
 }
