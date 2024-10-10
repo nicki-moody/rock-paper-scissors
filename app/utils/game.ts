@@ -1,5 +1,3 @@
-
-// export const determineWinner = (playerChoice : string, computerChoice : string) : Decision => {
 export function determineWinner(playerChoice : string, computerChoice : string) : Decision { 
     if(playerChoice === computerChoice)
         return Decision.Draw;

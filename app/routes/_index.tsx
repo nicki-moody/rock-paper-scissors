@@ -1,8 +1,10 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
+import { useOutletContext, Link } from "@remix-run/react";
+
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
-import { choices } from "~/utils/choices";
+import {choices} from "~/utils/choices";
+
 
 export const meta: MetaFunction = () => {
   return [
@@ -12,10 +14,12 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const { score } = useOutletContext<number>();
+
   return (
     <div className="flex h-screen items-start justify-center bg-gradient-start uppercase">
       <div className="flex flex-col items-center gap-2 grow">
-        <Header />
+        <Header score={score}/>
         <div className="flex flex-row flex-wrap min-w-80 justify-center items-center bg-game w-96 h-96">
            {choices.map(({ choice, text, icon, placement, outerCircle }) => (
               <div key={choice} className={`flex justify-center ${placement}`}>

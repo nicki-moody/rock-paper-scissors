@@ -6,9 +6,11 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
+import { useState } from "react";
 
 import "./tailwind.css";
 import "./app.css";
+import { Decision } from "./utils/game";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -42,5 +44,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+
+  const [score, setScore] = useState<number>(0);
+
+  const updateScore = (decision : Decision) => {
+    if (decision === Decision.Won) {
+      setScore((prevScore) => prevScore + 1);
+    } else if (decision === Decision.Lost) {
+      setScore((prevScore) => prevScore - 1);
+    }
+  };
+
+  return <Outlet context={{ score, updateScore }} />;
 }

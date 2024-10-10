@@ -1,5 +1,6 @@
 import { useParams } from "@remix-run/react";
 import { useState, useEffect } from "react";
+import { useOutletContext } from "@remix-run/react";
 
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
@@ -10,10 +11,11 @@ import { choices } from "~/utils/choices";
 import { Decision, determineWinner } from "~/utils/game";
 
 export default function Choice() {
+    const { score, updateScore } = useOutletContext();
     const {choiceId} = useParams();
     const [computerChoice, setComputerChoice] = useState(""); 
     const [loading, setLoading] = useState(true); 
-    const [decision, setDecision] = useState<Decision>(Decision.NotSet);
+    const [decision, setDecision] = useState(Decision.NotSet);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -22,8 +24,9 @@ export default function Choice() {
             
             const gameDecision = determineWinner(choiceId || "", computerChoice);
             setDecision(gameDecision);
-
+            updateScore(gameDecision)
             setLoading(false);
+
             }, 1000); 
 
             return () => clearTimeout(timer);
@@ -32,7 +35,7 @@ export default function Choice() {
     return (
         <div className="flex h-screen items-start justify-center bg-gradient-start uppercase">
             <div className="flex flex-col items-center gap-2 grow">
-                <Header />
+                <Header score={score}/>
                 <div className="flex flex-row w-1/2 justify-center items-stretch">
                 <OutcomeBanner decision={decision} />
                 <div className="flex flex-col w-1/2 items-center">
