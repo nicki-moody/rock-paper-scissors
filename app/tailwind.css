@@ -39,6 +39,9 @@
   .shadow-inner-strong {
     box-shadow: inset 0 10px 0px 0 hsl(var(--choice-inner-shadow));
   }
+  .bg-dark-blue {
+    background-color: hsl(var(--background-gradient-2));
+  }
 }
 
 html,

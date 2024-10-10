@@ -40,16 +40,16 @@ export default function Choice() {
                 <OutcomeBanner decision={decision} />
                 <div className="flex flex-col w-1/2 items-center">
                         <div className="text-gray-100 p-8">You Picked</div>
-                        <div className="flex justify-center">
+                        <div className="flex justify-center h-full">
                             <ChoiceCard choice={choiceId} />
                         </div>
                     </div>
                     <div className="flex flex-col w-1/2 items-center">
                        <div className="text-gray-100 p-8">The House Picked</div> 
-                       <div className="flex justify-center">
+                       <div className="flex justify-center h-full items-center">
                             {
                                 loading ? 
-                                ( <p>The computer is picking</p> ) : 
+                                ( <div className="flex bg-dark-blue rounded-full items-center w-40 h-40"></div> ) : 
                                 ( <ChoiceCard choice={computerChoice} /> )
                             }
                         </div>
