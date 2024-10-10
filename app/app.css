@@ -18,6 +18,7 @@
     --scissors-gradient-1: 28deg 74% 45%;
     --scissors-gradient-2: 40deg 84% 53%;
     --choice-inner-shadow: 181deg 1% 80%;
+    --circle-highlight: 0deg 0% 100%;
   }
   
   body {

@@ -5,6 +5,7 @@ export const choices = [
     icon: "/images/icon-paper.svg",
     placement: "mr-auto",
     outerCircle: "paper-outer-circle",
+    outerCircleHighlight: "outer-circle-highlight",
   },
   {
     choice: "scissors",
@@ -12,6 +13,7 @@ export const choices = [
     icon: "/images/icon-scissors.svg",
     placement: "ml-auto",
     outerCircle: "scissors-outer-circle",
+    outerCircleHighlight: "outer-circle-highlight",
   },
   {
     choice: "rock",
@@ -19,5 +21,6 @@ export const choices = [
     icon: "/images/icon-rock.svg",
     placement: "basis-full",
     outerCircle: "rock-outer-circle",
+    outerCircleHighlight: "outer-circle-highlight",
   },
 ];

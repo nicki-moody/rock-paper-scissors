@@ -36,6 +36,9 @@
     background-color: hsl(var(--scissors-gradient-2));
     box-shadow: 0 0.5rem 0 hsl(var(--scissors-gradient-1)); 
   }
+  .outer-circle-highlight:hover {
+    border: hsl(var(--circle-highlight)/50%) 1em solid;
+  }
   .shadow-inner-strong {
     box-shadow: inset 0 10px 0px 0 hsl(var(--choice-inner-shadow));
   }

@@ -16,6 +16,7 @@ export default function Choice() {
     const [computerChoice, setComputerChoice] = useState(""); 
     const [loading, setLoading] = useState(true); 
     const [decision, setDecision] = useState(Decision.NotSet);
+    const [showDecision, setShowDecision] = useState(false); 
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -24,26 +25,46 @@ export default function Choice() {
             
             const gameDecision = determineWinner(choiceId || "", computerChoice);
             setDecision(gameDecision);
-            updateScore(gameDecision)
             setLoading(false);
 
+            const timer2 = setTimeout(() => {
+                updateScore(gameDecision);
+                if(gameDecision != Decision.NotSet){
+                    setShowDecision(true);
+                }
             }, 1000); 
 
-            return () => clearTimeout(timer);
-        }, [choiceId]);
+            return () => {
+                clearTimeout(timer2);
+        }
+        }, 1000); 
+
+        return () => {
+            clearTimeout(timer);
+        }
+    }, [choiceId]);
 
     return (
         <div className="flex h-screen items-start justify-center bg-gradient-start uppercase">
             <div className="flex flex-col items-center gap-2 grow">
                 <Header score={score}/>
-                <div className="flex flex-row w-1/2 justify-center items-stretch">
-                <OutcomeBanner decision={decision} />
-                <div className="flex flex-col w-1/2 items-center">
+                <div className="flex flex-row basis-auto justify-center items-stretch w-1/2">
+                    <div className="flex flex-col w-1/2 items-center">
                         <div className="text-gray-100 p-8">You Picked</div>
                         <div className="flex justify-center h-full">
                             <ChoiceCard choice={choiceId} />
                         </div>
                     </div>
+                    {
+                        (showDecision) ? 
+                        (
+                             <div className="flex items-center">
+                                <OutcomeBanner decision={decision} />
+                            </div>
+                        ) : null
+                        
+                    }
+                   
                     <div className="flex flex-col w-1/2 items-center">
                        <div className="text-gray-100 p-8">The House Picked</div> 
                        <div className="flex justify-center h-full items-center">

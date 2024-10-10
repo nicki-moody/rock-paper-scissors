@@ -5,11 +5,11 @@ export default function OutcomeBanner({ decision } : { decision: Decision }) {
     if(decision === Decision.NotSet) return;
 
     return (
-        <div id="outcome-banner" className="absolute z-10 top-1/2 rounded-lg border-2 border-red-300 bg-gray-100/75 p-4 text-center">
-            <p className="text-4xl">
+        <div className="flex flex-col p-4 text-center whitespace-nowrap">
+            <p className="text-4xl uppercase text-white pb-4">
                 { bannerText(decision) }  
             </p>
-            <Link to="/" className="uppercase text-black font-bold underline"> 
+            <Link to="/" className="uppercase text-red-800 text-xs p-2 px-6 bg-gray-100 rounded-lg"> 
                 Play Again
             </Link>
         </div>
@@ -18,10 +18,10 @@ export default function OutcomeBanner({ decision } : { decision: Decision }) {
 
 function bannerText(decision : Decision){
     if (decision === Decision.Won)
-        return "You won!"
+        return "You win"
     else if (decision === Decision.Lost)
-        return "You Lost!"
+        return "You Lose"
     else if (decision === Decision.Draw)
-        return "Draw!"
+        return "Draw"
     else return
 }
