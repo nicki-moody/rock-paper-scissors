@@ -1,40 +1,75 @@
-# Welcome to Remix!
+# Frontend Mentor - Rock, Paper, Scissors solution
 
-- 📖 [Remix docs](https://remix.run/docs)
+This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Development
+## Table of contents
 
-Run the dev server:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-```shellscript
-npm run dev
+**Note: Delete this note and update the table of contents based on what sections you keep.**
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the optimal layout for the game depending on their device's screen size
+- Play Rock, Paper, Scissors against the computer
+
+### Screenshot
+
+![](./screenshots/main-page.jpg)
+![](./screenshots/you-lose.jpg)
+
+### Links
+
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- [React](https://reactjs.org/) - JS library
+- [Remix](https://remix.run/) - React framework
+- [Tailwind](https://tailwindcss.com/) - For styles
+
+### What I learned
+
+I learned about routing in Remix, and refreshed my knowledge of React including useEffect, using outlet context and handling modals 
+
+I loved using tailwind in my markup, I have never doen this before and it made it so much easier to work with the styling. 
+
+I'm proud that I finally figured out I could use box-shadow to create the 3 concentric circles, after initially struggling with using 3 div styled as circles and trying to line them up all with the winning icon
+
+```css
+
+.winner {
+    box-shadow: 
+      0 0 0 30px hsl(var(--winner-highlight)), 
+      0 0 0 60px hsl(var(--winner-highlight-2)), 
+      0 0 0 90px hsl(var(--winner-highlight-3)); 
+}
 ```
 
-## Deployment
+### Continued development
 
-First, build your app for production:
+I'd like to try getting the modals working using routes next time and I want to learn more about deploying in netlify.
 
-```sh
-npm run build
-```
+## Author
 
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/nicki-moody)
