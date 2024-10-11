@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [https://your-live-site-url.com](https://nickis-rock-paper-scissors.netlify.app/)
+- Live Site URL: [https://nickis-rock-paper-scissors.netlify.app](https://nickis-rock-paper-scissors.netlify.app/)
 
 ## My process
 
