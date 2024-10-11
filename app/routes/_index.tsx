@@ -1,9 +1,9 @@
 import type { MetaFunction } from "@remix-run/node";
 import { useOutletContext, Link } from "@remix-run/react";
 
-import Header from "~/components/Header";
-import Footer from "~/components/Footer";
-import {choices} from "~/utils/choices";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import {choices} from "../utils/choices";
 import { ScoreOutletContext } from "~/utils/game";
 
 
