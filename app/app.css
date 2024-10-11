@@ -19,6 +19,9 @@
     --scissors-gradient-2: 40deg 84% 53%;
     --choice-inner-shadow: 181deg 1% 80%;
     --circle-highlight: 0deg 0% 100%;
+    --winner-highlight: 225deg 43% 21%;
+    --winner-highlight-2: 223deg 38% 23%;
+    --winner-highlight-3: 227deg 32% 25%;
   }
   
   body {

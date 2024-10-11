@@ -45,6 +45,12 @@
   .bg-dark-blue {
     background-color: hsl(var(--background-gradient-2));
   }
+  .winner {
+    box-shadow: 
+      0 0 0 30px hsl(var(--winner-highlight)), 
+      0 0 0 60px hsl(var(--winner-highlight-2)), 
+      0 0 0 90px hsl(var(--winner-highlight-3)); 
+  }
 }
 
 html,

@@ -42,36 +42,36 @@ export default function Choice() {
         return () => {
             clearTimeout(timer);
         }
-    }, [choiceId]);
-
+    }, [choiceId]); 
+    
     return (
         <div className="flex h-screen items-start justify-center bg-gradient-start uppercase">
             <div className="flex flex-col items-center gap-2 grow">
                 <Header score={score}/>
                 <div className="flex flex-row basis-auto justify-center items-stretch w-1/2">
                     <div className="flex flex-col w-1/2 items-center">
-                        <div className="text-gray-100 p-8">You Picked</div>
-                        <div className="flex justify-center h-full">
-                            <ChoiceCard choice={choiceId} />
+                        <div className="z-10 text-gray-100 p-8">You Picked</div>
+                        <div className="flex justify-center h-full w-full items-center">
+                            <ChoiceCard choice={choiceId} displayHighlight={showDecision && decision === Decision.Won ? true : false} />
                         </div>
                     </div>
                     {
                         (showDecision) ? 
                         (
-                             <div className="flex items-center">
+                             <div className="z-10 flex items-center">
                                 <OutcomeBanner decision={decision} />
                             </div>
                         ) : null
                         
                     }
                    
-                    <div className="flex flex-col w-1/2 items-center">
-                       <div className="text-gray-100 p-8">The House Picked</div> 
-                       <div className="flex justify-center h-full items-center">
+                    <div className="flex flex-col items-center">
+                       <div className="z-10 text-gray-100 p-8">The House Picked</div> 
+                       <div className="flex justify-center h-full w-full items-center">
                             {
                                 loading ? 
-                                ( <div className="flex bg-dark-blue rounded-full items-center w-40 h-40"></div> ) : 
-                                ( <ChoiceCard choice={computerChoice} /> )
+                                ( <div className="flex bg-dark-blue rounded-full items-center w-40 h-40 mx-12"></div> ) : 
+                                ( <ChoiceCard choice={computerChoice} displayHighlight={showDecision && decision === Decision.Lost ? true : false} /> )
                             }
                         </div>
                     </div>
