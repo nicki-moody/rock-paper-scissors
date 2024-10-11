@@ -12,11 +12,7 @@ This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](h
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -29,8 +25,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshots/main-page.jpg)
-![](./screenshots/you-lose.jpg)
+![](./screenshots/main-page.png)
+![](./screenshots/you-lose.png)
 
 ### Links
 
