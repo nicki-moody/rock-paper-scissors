@@ -1,6 +1,6 @@
 import { choices } from "~/utils/choices";
 
-export default function ChoiceCard({choice, displayHighlight}) {
+export default function ChoiceCard({choice, displayHighlight} : {choice: string | undefined, displayHighlight : boolean}) {
     
     const chosenChoice = choices.find((ch) => ch.choice === choice);
     if (chosenChoice === undefined)

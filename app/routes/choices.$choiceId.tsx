@@ -1,6 +1,5 @@
-import { useParams } from "@remix-run/react";
+import { useParams, useOutletContext } from "@remix-run/react";
 import { useState, useEffect } from "react";
-import { useOutletContext } from "@remix-run/react";
 
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
