@@ -21,7 +21,7 @@ export default function Index() {
     <div className="flex h-screen items-start justify-center bg-gradient-start uppercase">
       <div className="flex flex-col items-center gap-2 grow p-4 h-full justify-between">
         <Header score={score}/>
-        <div className="flex flex-row flex-wrap min-w-80 justify-center items-center bg-game w-96 h-96">
+        <div className="flex flex-row flex-wrap min-w-80 justify-center items-center bg-game w-auto ">
            {choices.map(({ choice, text, icon, placement, outerCircle, outerCircleHighlight}) => (
               <div key={choice} className={`flex justify-center ${placement}`}>
                   <Link key={choice} to={`/choices/${choice}`} className={`${outerCircle} ${outerCircleHighlight} flex rounded-full w-40 h-40 items-center justify-center`}>

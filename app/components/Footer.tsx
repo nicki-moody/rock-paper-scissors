@@ -9,9 +9,9 @@ export default function Footer() {
     }
 
     return (
-        <footer className="rounded-lg border-2 md:ml-auto mx-6 text-base border-gray-200 px-8 dark:border-gray-700">
+        <footer className="rounded-lg border-2 sm:ml-auto mx-6 text-base border-gray-200 px-8">
             <button
-                className="flex items-center self-stretch p-2 text-sm leading-normal text-gray-100 hover:underline"
+                className="flex items-center uppercase self-stretch p-2 text-base sm:text-sm leading-normal text-gray-100 hover:underline"
                 type="button"
                 onClick={toggleModal}
             >Rules

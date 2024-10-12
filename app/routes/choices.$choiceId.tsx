@@ -46,35 +46,42 @@ export default function Choice() {
     
     return (
         <div className="flex h-screen items-start justify-center bg-gradient-start uppercase">
-            <div className="flex flex-col items-center gap-2 grow">
+            <div className="flex flex-col items-center gap-2 grow p-4 h-full justify-between ">
                 <Header score={score}/>
-                <div className="flex flex-row basis-auto justify-center items-stretch w-1/2">
-                    <div className="flex flex-col w-1/2 items-center">
-                        <div className="z-10 text-gray-100 p-8">You Picked</div>
+                <div className="flex flex-row basis-auto justify-between space-x-2 w-auto">
+                    <div className="flex flex-col items-center w-1/2">
+                        <div className="z-10 text-gray-100 my-4">You Picked</div>
                         <div className="flex justify-center h-full w-full items-center">
                             <ChoiceCard choice={choiceId} displayHighlight={showDecision && decision === Decision.Won ? true : false} />
                         </div>
                     </div>
-                    {
+                    { 
                         (showDecision) ? 
                         (
-                             <div className="z-10 flex items-center">
-                                <OutcomeBanner decision={decision} />
+                            <div className="hidden sm:flex z-10 flex items-center">
+                                <OutcomeBanner showDecision={showDecision} decision={decision} />
                             </div>
                         ) : null
-                        
                     }
-                   
-                    <div className="flex flex-col items-center">
-                       <div className="z-10 text-gray-100 p-8">The House Picked</div> 
-                       <div className="flex justify-center h-full w-full items-center">
+                    <div className="flex flex-col items-center w-1/2">
+                       <div className="z-10 text-gray-100 my-4">The House Picked</div> 
+                       <div className="flex justify-center h-full w-full items-center ">
                             {
                                 loading ? 
-                                ( <div className="flex bg-dark-blue rounded-full items-center w-40 h-40 mx-12"></div> ) : 
+                                ( 
+                                    <div className="flex w-44 h-44 sm:w-64 sm:h-64 items-center justify-center">
+                                        <div className="flex bg-dark-blue rounded-full w-32 h-32 sm:w-48 sm:h-48 items-center justify-center">                                        
+                                        </div>
+                                    </div>
+                                ) : 
                                 ( <ChoiceCard choice={computerChoice} displayHighlight={showDecision && decision === Decision.Lost ? true : false} /> )
                             }
                         </div>
                     </div>
+                  
+                </div>
+                <div className="sm:hidden z-10 flex items-center">
+                   <OutcomeBanner showDecision={showDecision} decision={decision} />
                 </div>
                 <Footer />
             </div> 

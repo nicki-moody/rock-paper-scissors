@@ -1,6 +1,6 @@
 export default function Header({score} : {score : number}) {
     return (
-        <header className="flex flex-row items-center w-full sm:w-2/4 justify-center md:items-start mt-6 gap-4 rounded-lg border-2 header-outline p-4">
+        <header className="z-20 flex flex-row items-center w-full sm:w-2/4 justify-center md:items-start mt-6 gap-4 rounded-lg border-2 header-outline p-4">
             <div className="flex text-gray-100 text-3xl font-bold leading-7">
                 <img src="/images/logo.svg" alt="Rock Paper Scissors" />
             </div>
